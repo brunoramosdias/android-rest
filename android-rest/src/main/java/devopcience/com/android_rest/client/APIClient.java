@@ -98,7 +98,6 @@ public class APIClient {
     private void writeOutputStream(HashMap<String, String> params, ContentType contentType, HttpURLConnection connection) throws Exception {
         OutputStream os;
         BufferedWriter writer;
-        //connection.setRequestProperty("Content-Type", "application/json;charset=utf-8");
         os = connection.getOutputStream();
         writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
         switch (contentType){
@@ -123,7 +122,7 @@ public class APIClient {
         return "";
     }
 
-    //TODO evealue this over Jackson Parser
+    //TODO evalueate  this over Jackson Parser
     private String getJsonString(HashMap<String, String> params) throws JSONException {
         JSONObject jsonObject = new JSONObject();
         for (Map.Entry<String, String> entry : params.entrySet()) {
@@ -154,11 +153,8 @@ public class APIClient {
     @NonNull
     protected HttpURLConnection getHttpURLConnection(String requestURL, RequestMethod method, Context context) throws IOException {
         URL url = new URL(requestURL);
-        /*String credentials = AppSharedPreferences.getUsername(context)+":"+AppSharedPreferences.getUserPass(context);
-        String basicAuthentication = "Basic "+ Base64.encodeToString(credentials.getBytes(), Base64.NO_WRAP);*/
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod(method.name());
-        //connection.setRequestProperty("Authorization", basicAuthentication);
         connection.setRequestProperty("Accept", "application/json");
         connection.setReadTimeout(readTimeout);
         connection.setConnectTimeout(timeoutMillis);
