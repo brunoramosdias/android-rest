@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="devopcience.com.droid_restly">
+    package="com.devopcience.droid_restly">
 
     <application
         android:allowBackup="true"

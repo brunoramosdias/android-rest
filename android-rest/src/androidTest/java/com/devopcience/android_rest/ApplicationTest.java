@@ -1,4 +1,4 @@
-package devopcience.com.android_rest;
+package com.devopcience.android_rest;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

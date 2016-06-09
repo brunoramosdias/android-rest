@@ -1,4 +1,4 @@
-package devopcience.com.android_rest;
+package com.devopcience.droid_restly;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package devopcience.com.droid_restly;
+package com.devopcience.droid_restly;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
