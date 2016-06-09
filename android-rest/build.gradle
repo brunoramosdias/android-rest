@@ -2,8 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group = 'com.devopcience.android_rest' // Change this to match your package name
-version = '1.0.0-ALPHA' // Change this to match your version number
+group = 'com.devopcience.android_rest'
+version = '1.0.0-ALPHA'
 
 android {
     compileSdkVersion 23
@@ -23,6 +23,38 @@ android {
     }
 }
 
+
+bintray {
+    user = 'brunoramosdias'
+    key = 'c95a8885f826f186f36213146d4b403ef111a0e1'
+    pkg {
+        repo = 'maven'
+        name = 'com.devopcience.android_rest'
+
+
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/brunoramosdias/droid-tools.git'
+        websiteUrl = 'https://github.com/brunoramosdias/droid-tools'
+    }
+    configurations = ['archives']
+}
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath()
+            .join(File.pathSeparator))
+}
+
+
+
+artifacts {
+    archives generateSourcesJar
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
