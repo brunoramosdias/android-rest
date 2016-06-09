@@ -1,4 +1,9 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.devopcience.android_rest' // Change this to match your package name
+version = '1.0.0-ALPHA' // Change this to match your version number
 
 android {
     compileSdkVersion 23
@@ -8,7 +13,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0-ALPHA"
     }
     buildTypes {
         release {
@@ -17,6 +22,7 @@ android {
         }
     }
 }
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
