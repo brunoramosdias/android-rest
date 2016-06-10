@@ -1,9 +1,11 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven-publish'
+
 
 group = 'com.devopcience.android_rest'
-version = '1.0.0-ALPHA'
+version = '1.0.0-ALPHA2'
 
 android {
     compileSdkVersion 23
@@ -13,7 +15,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0.0-ALPHA"
+        versionName "1.0.0-ALPHA2"
     }
     buildTypes {
         release {
@@ -37,7 +39,10 @@ bintray {
         websiteUrl = 'https://github.com/brunoramosdias/droid-tools'
     }
     configurations = ['archives']
+
+
 }
+
 
 task generateSourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
