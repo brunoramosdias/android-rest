@@ -150,7 +150,6 @@ public class APIClient {
         setResponse(sb.toString());
     }
 
-    @NonNull
     protected HttpURLConnection getHttpURLConnection(String requestURL, RequestMethod method, Context context) throws IOException {
         URL url = new URL(requestURL);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -161,17 +160,7 @@ public class APIClient {
         return connection;
     }
 
-    @Deprecated
-    private HttpURLConnection openConnection(RequestMethod requestMethod, String requestURL) throws IOException {
-        URL url = new URL(requestURL);
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setReadTimeout(readTimeout);
-        conn.setConnectTimeout(timeoutMillis);
-        conn.setRequestMethod(requestMethod.name());
-        conn.setDoInput(true);
-        conn.setDoOutput(true);
-        return conn;
-    }
+
 
     private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
         StringBuilder result = new StringBuilder();

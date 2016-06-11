@@ -1,7 +1,5 @@
 package com.devopcience.android_rest.client;
 
-import android.support.annotation.NonNull;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -43,7 +41,7 @@ public class JsonParser {
         return objectMapper.readValue(inputStream, tClass);
     }
 
-    @NonNull
+
     private static ObjectMapper getObjectMapper(boolean failUnkonownProperties,
                                                 boolean failMissingCreatorProperties) {
         ObjectMapper objectMapper = new ObjectMapper();
