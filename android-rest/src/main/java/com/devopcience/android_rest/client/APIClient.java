@@ -21,6 +21,7 @@ import java.util.Map;
 
 /**
  * Created by brunodias on 08/06/2016.
+ * for android rest lib
  */
 public class APIClient {
     /*
@@ -63,7 +64,7 @@ public class APIClient {
         responseCode = 0;
     }
 
-    protected void execute(final RequestMethod method, final HashMap<String, String> params, ContentType contentType , String requestURL, Context context) throws Exception {
+    public void execute(final RequestMethod method, final HashMap<String, String> params, ContentType contentType, String requestURL, Context context) throws Exception {
         HttpURLConnection connection;
         switch (method){
             case GET:
